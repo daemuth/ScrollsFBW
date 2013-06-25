@@ -1,0 +1,8 @@
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Release\Assembly-CSharp.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Release\Mono.Cecil.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Release\ScrollsModLoader.Interfaces.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Release\UnityEngine.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Release\BW.mod.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\obj\Release\BW.mod.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\BorderlessWindow\bin\Release\BW.mod.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\BorderlessWindow\obj\Release\BW.mod.dll

@@ -1,0 +1,9 @@
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Debug\BorderlessWindow.mod.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Debug\BorderlessWindow.mod.pdb
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Debug\Assembly-CSharp.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Debug\Mono.Cecil.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Debug\ScrollsModLoader.Interfaces.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Debug\UnityEngine.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\obj\Debug\BorderlessWindow.csprojResolveAssemblyReference.cache
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\obj\Debug\BorderlessWindow.mod.dll
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\obj\Debug\BorderlessWindow.mod.pdb
