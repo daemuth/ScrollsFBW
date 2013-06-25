@@ -48,7 +48,7 @@ namespace BorderlessWindow
             try
             {
                 return new MethodDefinition[] {
-                    scrollsTypes["M"].Methods.GetMethod("ChatMessage", new Type[]{typeof(RoomChatMessageMessage)}),
+                    scrollsTypes["ChatRooms"].Methods.GetMethod("ChatMessage", new Type[]{typeof(RoomChatMessageMessage)}),
             	};
             }
             catch
@@ -63,10 +63,12 @@ namespace BorderlessWindow
 		{
 
             //Gotta fetch screen resolution somehow
+            int unityScreenWidth = UnityEngine.Screen.currentResolution.width;
+            int unityScreenHeight = UnityEngine.Screen.currentResolution.height;
 
             returnValue = null;
             SetWindowLong(GetForegroundWindow(), GWL_STYLE, WS_BORDER);
-            SetWindowPos(GetForegroundWindow(), 0, 0, 0, (int)1280, (int)720, SWP_SHOWWINDOW);
+            SetWindowPos(GetForegroundWindow(), 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
             return false;
 		}
 
