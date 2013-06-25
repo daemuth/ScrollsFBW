@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Windows.Interop;
 using UnityEngine;
  
 
@@ -18,8 +19,9 @@ namespace BorderlessWindow
         static extern IntPtr SetWindowLong(IntPtr hwnd, int _nIndex, int dwNewLong);
         [DllImport("user32.dll")]
         static extern bool SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
-        [DllImport("user32.dll")]
-        static extern IntPtr GetForegroundWindow();
+        [DllImport("user32.dll", EntryPoint = "FindWindow")]
+        private static extern IntPtr FindWindow(string lp1, string lp2);
+
 
         const uint SWP_SHOWWINDOW = 0x0040;
         const int GWL_STYLE = -16;
@@ -28,6 +30,7 @@ namespace BorderlessWindow
 		//initialize everything here, Game is loaded at this point
 		public BorderlessWindow ()
 		{
+
 		}
 
 
@@ -47,6 +50,8 @@ namespace BorderlessWindow
 		{
             try
             {
+
+
                 return new MethodDefinition[] {
                     scrollsTypes["ChatRooms"].Methods.GetMethod("ChatMessage", new Type[]{typeof(RoomChatMessageMessage)}),
             	};
@@ -61,14 +66,17 @@ namespace BorderlessWindow
 		
 		public override bool BeforeInvoke (InvocationInfo info, out object returnValue)
 		{
-
             //Gotta fetch screen resolution somehow
+            returnValue = null;
             int unityScreenWidth = UnityEngine.Screen.currentResolution.width;
             int unityScreenHeight = UnityEngine.Screen.currentResolution.height;
 
-            returnValue = null;
-            SetWindowLong(GetForegroundWindow(), GWL_STYLE, WS_BORDER);
-            SetWindowPos(GetForegroundWindow(), 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
+            IntPtr handle = FindWindow(null, "Scrolls");
+
+            SetWindowLong(handle, GWL_STYLE, WS_BORDER);
+            SetWindowPos(handle, 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
+
+
             return false;
 		}
 
