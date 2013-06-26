@@ -5,6 +5,6 @@ d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Release\UnityEng
 d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\bin\Release\BW.mod.dll
 d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\Template.mod\obj\Release\BW.mod.dll
 d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\BorderlessWindow\bin\Release\BW.mod.dll
-d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\BorderlessWindow\obj\Release\BW.mod.dll
 d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\BorderlessWindow\bin\Release\UnityEngine.dll
-d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\BorderlessWindow\obj\Release\BorderlessWindow.csprojResolveAssemblyReference.cache
+d:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\BorderlessWindow\obj\Release\BW.mod.dll
+D:\Cloud\Dropbox\Scrolls mods\BorderlessWindow\BorderlessWindow\obj\Release\BorderlessWindow.csprojResolveAssemblyReference.cache

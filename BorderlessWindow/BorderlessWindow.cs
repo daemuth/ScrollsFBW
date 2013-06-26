@@ -6,13 +6,12 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Windows.Interop;
 using UnityEngine;
- 
+
 
 namespace BorderlessWindow
 {
-	public class BorderlessWindow : BaseMod
-	{
-
+    public class BorderlessWindow : BaseMod
+    {
         public Rect screenPosition;
 
         [DllImport("user32.dll")]
@@ -27,33 +26,30 @@ namespace BorderlessWindow
         const int GWL_STYLE = -16;
         const int WS_BORDER = 1;
 
-		//initialize everything here, Game is loaded at this point
-		public BorderlessWindow ()
-		{
+        //initialize everything here, Game is loaded at this point
+        public BorderlessWindow()
+        {
+        }
 
-		}
 
-
-		public static string GetName ()
-		{
+        public static string GetName()
+        {
             return "BW";
-		}
+        }
 
-		public static int GetVersion ()
-		{
+        public static int GetVersion()
+        {
             return 1;
-		}
+        }
 
-		//only return MethodDefinitions you obtained through the scrollsTypes object
-		//safety first! surround with try/catch and return an empty array in case it fails
-		public static MethodDefinition[] GetHooks (TypeDefinitionCollection scrollsTypes, int version)
-		{
+        //only return MethodDefinitions you obtained through the scrollsTypes object
+        //safety first! surround with try/catch and return an empty array in case it fails
+        public static MethodDefinition[] GetHooks(TypeDefinitionCollection scrollsTypes, int version)
+        {
             try
             {
-
-
                 return new MethodDefinition[] {
-                    scrollsTypes["ChatRooms"].Methods.GetMethod("ChatMessage", new Type[]{typeof(RoomChatMessageMessage)}),
+                    scrollsTypes["Login"].Methods.GetMethod("loadSettings")[0],
             	};
             }
             catch
@@ -61,12 +57,11 @@ namespace BorderlessWindow
                 Console.WriteLine("Fail van!");
                 return new MethodDefinition[] { };
             }
-		}
+        }
 
-		
-		public override bool BeforeInvoke (InvocationInfo info, out object returnValue)
-		{
-            //Gotta fetch screen resolution somehow
+
+        public override bool BeforeInvoke(InvocationInfo info, out object returnValue)
+        {
             returnValue = null;
             int unityScreenWidth = UnityEngine.Screen.currentResolution.width;
             int unityScreenHeight = UnityEngine.Screen.currentResolution.height;
@@ -78,14 +73,12 @@ namespace BorderlessWindow
 
 
             return false;
-		}
+        }
 
-		public override void AfterInvoke (InvocationInfo info, ref object returnValue)
-		{
-
-
-			throw new NotImplementedException ();
-		}
-	}
+        public override void AfterInvoke(InvocationInfo info, ref object returnValue)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 
