@@ -28,6 +28,7 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Assembly-CSharp">
@@ -36,10 +37,17 @@
     <Reference Include="ScrollsModLoader.Interfaces">
       <HintPath>..\ScrollsModLoader.Interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="Mono.Cecil">
       <HintPath>..\Mono.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.WorkflowServices" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\lolilyenmappanincsis\UnityEngine.dll</HintPath>
