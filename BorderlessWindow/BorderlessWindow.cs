@@ -25,6 +25,9 @@ namespace BorderlessWindow
         private static extern IntPtr FindWindow(string lp1, string lp2);
         [DllImport("user32.dll")]
         static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        static private IntPtr HWND_TOPMOST = new IntPtr(-1);
+
     
         const uint SWP_SHOWWINDOW = 0x0040;
         const int GWL_STYLE = -16;
@@ -75,7 +78,7 @@ namespace BorderlessWindow
             IntPtr handle = FindWindow(null, "Scrolls");
 
             SetWindowLong(handle, GWL_STYLE, WS_BORDER);
-            SetWindowPos(handle, 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
+            SetWindowPos(handle, -1, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
             SetForegroundWindow(handle);
             
 
