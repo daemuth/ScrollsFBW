@@ -74,6 +74,7 @@ namespace BorderlessWindow
 
             SetWindowLong(handle, GWL_STYLE, WS_BORDER);
             SetWindowPos(handle, 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
+            
 
             return false;
         }
