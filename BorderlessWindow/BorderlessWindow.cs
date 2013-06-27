@@ -78,7 +78,7 @@ namespace BorderlessWindow
             IntPtr handle = FindWindow(null, "Scrolls");
 
             SetWindowLong(handle, GWL_STYLE, WS_BORDER);
-            SetWindowPos(handle, -1, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
+            SetWindowPos(handle, -2, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
             SetForegroundWindow(handle);
             
 
