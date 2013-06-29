@@ -77,7 +77,7 @@ namespace BorderlessWindow
 
         public override void AfterInvoke(InvocationInfo info, ref object returnValue)
         {
-            throw new NotImplementedException();
+            return;
         }
     }
 }
