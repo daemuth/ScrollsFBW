@@ -23,6 +23,10 @@ namespace BorderlessWindow
         static extern bool SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
         [DllImport("user32.dll", EntryPoint = "FindWindow")]
         private static extern IntPtr FindWindow(string lp1, string lp2);
+
+        public int unityScreenWidth = UnityEngine.Screen.width;
+        public int unityScreenHeight = UnityEngine.Screen.height;
+        public IntPtr handle = FindWindow(null, "Scrolls");
     
         const uint SWP_SHOWWINDOW = 0x0040;
         const int GWL_STYLE = -16;
@@ -64,11 +68,6 @@ namespace BorderlessWindow
         {
             returnValue = null;
 
-            int unityScreenWidth = UnityEngine.Screen.width;
-            int unityScreenHeight = UnityEngine.Screen.height;
-
-            IntPtr handle = FindWindow(null, "Scrolls");
-
             SetWindowLong(handle, GWL_STYLE, WS_BORDER);
             SetWindowPos(handle, 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);           
 
@@ -77,7 +76,7 @@ namespace BorderlessWindow
 
         public override void AfterInvoke(InvocationInfo info, ref object returnValue)
         {
-            return;
+            throw new NotImplementedException();
         }
     }
 }
