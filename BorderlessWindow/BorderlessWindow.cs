@@ -52,7 +52,7 @@ namespace BorderlessWindow
         {
             try
             {
-                return new MethodDefinition[] {      scrollsTypes["MainMenu"].Methods.GetMethod("Start")[0],
+                return new MethodDefinition[] { scrollsTypes["MainMenu"].Methods.GetMethod("Start")[0],
                 };
                
             }
@@ -66,19 +66,16 @@ namespace BorderlessWindow
         public override bool BeforeInvoke(InvocationInfo info, out object returnValue)
         {
             returnValue = null;
-
-             if(info.targetMethod.Equals("Start")){
-
-                SetWindowLong(handle, GWL_STYLE, WS_BORDER);
-                SetWindowPos(handle, 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
-             }
-          
-
             return false;
         }
 
         public override void AfterInvoke(InvocationInfo info, ref object returnValue)
         {
+            if (info.targetMethod.Equals("Start"))
+            {
+                SetWindowLong(handle, GWL_STYLE, WS_BORDER);
+                SetWindowPos(handle, 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
+            }
             return;
         }
     }
