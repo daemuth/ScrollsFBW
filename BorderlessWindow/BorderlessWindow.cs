@@ -52,13 +52,12 @@ namespace BorderlessWindow
         {
             try
             {
-                return new MethodDefinition[] {
-                    scrollsTypes["Login"].Methods.GetMethod("loadSettings")[0],
-            	};
+                return new MethodDefinition[] {      scrollsTypes["MainMenu"].Methods.GetMethod("Start")[0],
+                };
+               
             }
             catch
             {
-                Console.WriteLine("Fail van!");
                 return new MethodDefinition[] { };
             }
         }
@@ -68,15 +67,19 @@ namespace BorderlessWindow
         {
             returnValue = null;
 
-            SetWindowLong(handle, GWL_STYLE, WS_BORDER);
-            SetWindowPos(handle, 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);           
+             if(info.targetMethod.Equals("Start")){
+
+                SetWindowLong(handle, GWL_STYLE, WS_BORDER);
+                SetWindowPos(handle, 0, 0, 0, unityScreenWidth, unityScreenHeight, SWP_SHOWWINDOW);
+             }
+          
 
             return false;
         }
 
         public override void AfterInvoke(InvocationInfo info, ref object returnValue)
         {
-            throw new NotImplementedException();
+            return;
         }
     }
 }
